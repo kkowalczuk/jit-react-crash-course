@@ -22,7 +22,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "introduction-to-react",
+    "name": "jit-react-crash-course",
     "devDependencies": {
       "@babel/core": "^7.1.2",
       "@babel/preset-env": "^7.1.0",

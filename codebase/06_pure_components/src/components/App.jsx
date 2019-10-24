@@ -24,14 +24,12 @@ export default class App extends React.PureComponent {
   render() {
     const { activeTabId } = this.state
 
-    /* Not possible in react 16> */
-    return [
-      <Navbar handleTabChange={this.setActiveTabId}
-        activeTabId={activeTabId}
-        key="navbar"
-      />,
-      <Content activeTabId={activeTabId} key="content" />,
-      <Footer key="footer" />,
-    ]
+    return (
+      <React.Fragment>
+        <Navbar handleTabChange={this.setActiveTabId} activeTabId={activeTabId} />
+        <Content activeTabId={activeTabId} />
+        <Footer />
+      </React.Fragment>
+    )
   }
 }

@@ -27,7 +27,7 @@ const recipesList = [
     id: 4,
     name: "Lattice Peach-Apple Pie",
     description: "What a great combination! Get the best of two fruits, tart apples and sweet peaches, baked in one delicious pie.",
-    imageUrl: "http://kelownafarmersandcraftersmarket.com/wp-content/uploads/2017/10/apple-pie.jpg",
+    imageUrl: "https://cdn3.tmbi.com/toh/GoogleImagesPostCard/Lattice-Topped-Apple-Pie_exps29543_OBD2777379A05_22_1bC_RMS.jpg",
     preparationTime: 135,
     difficulty: "Easy",
   },
