@@ -12,7 +12,9 @@ export default class RecipesContainer extends React.PureComponent {
         <ErrorBoundary>
           <RandomRecipesList randomRecipes={DataSource.getNRandom(3)} />
         </ErrorBoundary>
-        <RecipesTable recipesList={DataSource.recipesList} />
+        <RecipesTable
+          recipesList={DataSource.recipesList}
+        />
       </div>
     )
   }

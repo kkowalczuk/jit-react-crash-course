@@ -49,11 +49,27 @@ const recipesList = [
   },
 ]
 
+const ingredientsList = {
+  "1": [{ name: "Beef", amount: "200g" }, { name: "Buns", amount: "2" }],
+  "2": [{ name: "Pasta", amount: "100g" }, { name: "Tomatoes", amount: "6" },
+    { name: "Chicken breast", amount: "250g" }],
+  "3": [{ name: "Filo pastry", amount: "100g" }, { name: "Butter", amount: "50g" },
+    { name: "Honey", amount: "2 tbsp" }, { name: "Pistachios", amount: "120g" }],
+  "4": [{ name: "Apples", amount: "0.5kg" }, { name: "Flour", amount: "250g" },
+    { name: "Eggs", amount: "1" }],
+  "5": [{ name: "Flour", amount: "200g" }, { name: "Chocolate", amount: "75g" },
+    { name: "Eggs", amount: "2" }, { name: "Milk", amount: "0.5l" },
+    { name: "Sugar", amount: "2 tbsp" }],
+  "6": [{ name: "Carrots", amount: "200g" }, { name: "Chicken broth", amount: "500ml" },
+    { name: "Cream", amount: "1 tsp" }],
+}
+
 const getNRandom = (n) => {
   return recipesList.slice().sort(() => 0.5 - Math.random()).slice(0, n)
 }
 
 export {
   recipesList,
+  ingredientsList,
   getNRandom,
 }

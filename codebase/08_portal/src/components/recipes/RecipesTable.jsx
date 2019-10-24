@@ -2,8 +2,27 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import RecipesTableEntry from "./RecipesTableEntry"
+import Modal from "../layout/modal/Modal"
+import SingleRecipe from "./SingleRecipe"
 
 export default class RecipesTable extends React.PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = { selectedRecipe: undefined }
+
+    this.handleRecipeSelect = this.handleRecipeSelect.bind(this)
+    this.handleRecipeClear = this.handleRecipeClear.bind(this)
+  }
+
+  handleRecipeSelect(recipe) {
+    this.setState({ selectedRecipe: recipe })
+  }
+
+  handleRecipeClear() {
+    this.setState({ selectedRecipe: undefined })
+  }
+
   render() {
     const { recipesList } = this.props
 
@@ -22,15 +41,23 @@ export default class RecipesTable extends React.PureComponent {
           <tbody>
             {
               recipesList.map((recipe) => {
-                return <RecipesTableEntry mealName={recipe.name}
+                return <RecipesTableEntry
+                  mealName={recipe.name}
                   preparationTime={recipe.preparationTime}
                   difficulty={recipe.difficulty}
                   key={recipe.id}
+                  onRecipeNameClick={() => this.handleRecipeSelect(recipe)}
                 />
               })
             }
           </tbody>
         </table>
+        <Modal
+          isOpen={this.state.selectedRecipe !== undefined}
+          onClose={this.handleRecipeClear}
+        >
+          <SingleRecipe recipe={this.state.selectedRecipe} />
+        </Modal>
       </fieldset>
     )
   }
