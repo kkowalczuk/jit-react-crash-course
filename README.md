@@ -1,1 +1,1 @@
-"# JIT React Crash Course 2019" 
+# JIT React Crash Course 2019
