@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipes table entry tests renders correctly with default state 1`] = `
+<nav>
+  <div
+    class="nav-wrapper orange darken-1 z-depth-4"
+  >
+    <div
+      class="container col s12"
+    >
+      <a
+        class="brand-logo"
+        href="#"
+      >
+        <i
+          class="material-icons"
+        >
+          restaurant
+        </i>
+        JIT Cookbook
+      </a>
+      <ul
+        class="right hide-on-med-and-down"
+        id="nav-mobile"
+      >
+        <li
+          class="active"
+        >
+          <a
+            href="#"
+          >
+            Recipes
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+          >
+            Shopping list
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
