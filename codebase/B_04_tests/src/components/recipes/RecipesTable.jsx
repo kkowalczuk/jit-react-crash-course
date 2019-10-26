@@ -4,17 +4,13 @@ import RecipesTableEntry from "./RecipesTableEntry"
 import Modal from "../layout/modal/Modal"
 import SingleRecipe from "./SingleRecipe"
 import { RecipesContext } from "../../providers/RecipesContextProvider"
+import useTextFilter from "../../hooks/useTextFilter"
 
 const RecipesTable = () => {
   const { recipesList, selectedRecipe, setSelectedRecipe } = React.useContext(RecipesContext)
-
-  const [inputValue, setInputValue] = React.useState("")
+  const { inputValue, setInputValue, filteredItems } = useTextFilter(recipesList, "name")
 
   const searchInputRef = React.useRef()
-  
-  const filteredRecipes = React.useMemo(() => {
-    return recipesList.filter(r => r.name.toLowerCase().includes(inputValue.toLowerCase()))
-  }, [inputValue, recipesList])
 
   const onSearchIconClick = React.useCallback(() => {
     searchInputRef.current.focus()
@@ -45,7 +41,7 @@ const RecipesTable = () => {
           />
         </div>
       </div>
-      {filteredRecipes.length === 0
+      {filteredItems.length === 0
         ? <p><strong>No items found.</strong></p>
         : (
           <table className="striped" style={{ marginBottom: "10px" }}>
@@ -59,7 +55,7 @@ const RecipesTable = () => {
 
             <tbody>
               {
-                filteredRecipes.map((recipe) => {
+                filteredItems.map((recipe) => {
                   return <RecipesTableEntry
                     mealName={recipe.name}
                     preparationTime={recipe.preparationTime}
